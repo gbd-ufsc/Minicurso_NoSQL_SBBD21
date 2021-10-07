@@ -1,0 +1,9 @@
+Utilize o https://console.neo4j.org/ para fazer as inserções. Lembre de limpar o BD antes de iniciar.
+
+CREATE (s:Perfil {name: "Sunny"}), (v:Perfil {name: "Violet"}),	(k:Perfil {name: "Klaus"}), (o:Perfil {name: "Cond Olaf"}),
+	(d:Perfil {name: "Duncan"}), (e:Perfil {name: "Esme"}),(a:Perfil {name: "Arthur"}),(m:Perfil {name: "Uncle Monty"}),(s)-[:AMIZADE]->(v),
+	(s)-[:AMIZADE]->(k),(s)-[:AMIZADE]->(m),(v)-[:AMIZADE]->(s),(v)-[:AMIZADE]->(k),(v)-[:AMIZADE]->(d),(v)-[:AMIZADE]->(m),(k)-[:AMIZADE]->(s),
+	(k)-[:AMIZADE]->(v),(d)-[:AMIZADE]->(m),(e)-[:AMIZADE]->(o),(o)-[:AMIZADE]->(s),(o)-[:AMIZADE]->(v),(o)-[:AMIZADE]->(k),(o)-[:AMIZADE]->(e),
+	(o)-[:AMIZADE]->(d),(p1:Post{texto: 'Socorro! Cond Olaf é um assassino!'}), (p2:Post{texto: 'Stehano é o Cond Olaf!'}), (v)-[:POSTED]->(p1),
+	(k)-[:POSTED]->(p2),(o)-[:COMMENTED{texto: "Não é Nada"}]->(p1),(k)-[:LIKED]->(p1),(d)-[:LIKED]->(p1),(s)-[:LIKED]->(p1),(v)-[:LIKED]->(p2);
+
